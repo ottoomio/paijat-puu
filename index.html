@@ -47,9 +47,10 @@
   "knowsAbout": ["Muotopuristus", "Viilu", "Alihankinta"]
 }
 </script>
+<link rel="preload" as="image" href="img/etusivu.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=33">
+<link rel="stylesheet" href="style.css?v=42">
 </head>
 <body>
 
@@ -86,27 +87,14 @@
 
 <section class="hero">
   <div class="hero-text">
-    <h1>Muotopuristus</h1>
-    <p>Valmistamme asiakkaan toiveen mukaisia muotopuristeita.</p>
-    <a class="btn" href="#yhteys">Ota yhteyttä</a>
+    <h1>Päijät-Puu Oy</h1>
+    <p>Laadukkaat muotopuristeet ammattitaidolla</p>
+    <a class="btn hero-btn" href="#yritys">Päijät-Puu Oy</a>
   </div>
-  <svg class="hero-art" viewBox="0 0 600 640" preserveAspectRatio="xMinYMax slice" role="img" aria-label="Taivutetut viilukerrokset">
-    <g fill="none" stroke-width="11">
-      <path stroke="#e9d3ad" d="M110 0V330A250 250 0 0 0 360 580H600"/>
-      <path stroke="#7a5639" d="M123 0V330A237 237 0 0 0 360 567H600"/>
-      <path stroke="#e9d3ad" d="M136 0V330A224 224 0 0 0 360 554H600"/>
-      <path stroke="#c9a678" d="M149 0V330A211 211 0 0 0 360 541H600"/>
-      <path stroke="#e9d3ad" d="M162 0V330A198 198 0 0 0 360 528H600"/>
-      <path stroke="#7a5639" d="M175 0V330A185 185 0 0 0 360 515H600"/>
-      <path stroke="#e9d3ad" d="M188 0V330A172 172 0 0 0 360 502H600"/>
-      <path stroke="#c9a678" d="M201 0V330A159 159 0 0 0 360 489H600"/>
-      <path stroke="#e9d3ad" d="M214 0V330A146 146 0 0 0 360 476H600"/>
-    </g>
-  </svg>
 </section>
 
 <section class="intro" id="yritys">
-  <img class="intro-img" src="img/yritys.jpg" alt="Taivutettuja viiluja pinossa" width="1504" height="2000" loading="lazy">
+  <img class="intro-img" src="img/yritys.jpg" alt="Taivutettuja viiluja pinossa" width="902" height="1200" loading="lazy">
   <div class="intro-text">
     <h2>Muotopuristeita vuodesta 1978</h2>
     <p>Olemme vuonna 1978 perustettu muotopuristeita valmistava yritys. Valmistamme asiakkaan toiveen mukaisia muotopuristeita. Suurin osa tuotteistamme valmistetaan alihankintana.</p>
@@ -121,7 +109,7 @@
   </div>
   <div class="mat-cols">
     <article>
-      <img src="img/materiaali-1.jpg" alt="Eri puulajien viiluja" width="1354" height="1800" loading="lazy">
+      <img src="img/materiaali-1.jpg" alt="Eri puulajien viiluja" width="902" height="1200" loading="lazy">
       <h3>Monipuolinen valikoima puulajeja</h3>
       <p>Käytämme muotopuristeiden valmistuksessa pääasiassa koivuviilua, joka muodostaa tuotteiden rakenteen. Tuotteen pintaan voidaan valita asiakkaan toiveiden mukaan erilaisia jalopuulajeja, jolloin valmiiseen tuotteeseen saadaan haluttu ilme ja luonnollinen puupinta.</p>
       <p>Materiaalivaihtoehdot eivät kuitenkaan rajoitu pelkästään koivuun tai tiettyihin puulajeihin. Valmistuksessa voidaan hyödyntää käytännössä kaikkia puulajeja tuotteen ja käyttötarkoituksen mukaan.</p>
@@ -133,7 +121,7 @@
       <p>Viilujen määrä, paksuus ja materiaalivalinnat määräytyvät valmistettavan tuotteen vaatimusten ja haluttujen ominaisuuksien mukaan.</p>
     </article>
     <article>
-      <img src="img/materiaali-3.jpg" alt="Kerroksittain taivutettuja tummia viiluja" width="1203" height="1600" loading="lazy">
+      <img src="img/materiaali-3.jpg" alt="Kerroksittain taivutettuja tummia viiluja" width="902" height="1200" loading="lazy">
       <h3>Asiakkaan toiveet ohjaavat materiaalivalintaa</h3>
       <p>Jokainen tuote suunnitellaan käyttötarkoituksensa mukaan. Asiakas voi vaikuttaa käytettäviin puulajeihin ja pintaviilun valintaan, jolloin lopputuloksesta voidaan tehdä juuri halutun näköinen.</p>
       <p>Eri puulajien yhdistelmillä voidaan luoda yksilöllisiä tuotteita, joissa yhdistyvät muotopuristamisen mahdollisuudet ja puun luonnollinen ulkonäkö.</p>
@@ -144,12 +132,14 @@
 <section class="products" id="tuotteet">
   <h2>Tuotteita</h2>
   <div class="gallery">
-    <img class="ga" src="img/tuote-1.jpg" alt="Nojatuoli puristetuilla sivupaneeleilla" width="1024" height="1017" loading="lazy">
-    <img class="gb" src="img/tuote-3.jpg" alt="Taivutettu muotopuriste" width="1053" height="1400" loading="lazy">
-    <img class="gf" src="img/tuote-5.jpg" alt="Taivutettu vaneripuriste" width="1052" height="1400" loading="lazy">
-    <img class="gd contain" src="img/tuote-4.png" alt="Tuoli, jonka istuin ja selkä ovat puristettua viilua" width="370" height="370" loading="lazy">
-    <img class="ge" src="img/tuote-6.jpg" alt="Vanerisia runko-osia" width="800" height="800" loading="lazy">
-    <img class="gc" src="img/tuote-2.jpg" alt="Nojatuoli, jonka selkä on puristettua viilua" width="1024" height="957" loading="lazy">
+    <img src="img/tuote-1.webp" alt="Veneen sisätila, jossa viilupintaiset kalusteet" width="250" height="250" loading="lazy">
+    <img src="img/tuote-8.webp" alt="Veneen keittiö, jossa viilupintaiset kaapit" width="250" height="250" loading="lazy">
+    <img src="img/tuote-7.webp" alt="Valkoinen nojatuoli puristetuilla sivupaneeleilla" width="250" height="250" loading="lazy">
+    <img src="img/tuote-6.webp" alt="Musta nojatuoli viilupintaisilla sivuilla" width="250" height="250" loading="lazy">
+    <img src="img/tuote-5.webp" alt="Taivutettu viilukulho, jossa omena" width="250" height="250" loading="lazy">
+    <img src="img/tuote-4.webp" alt="Vaalea puutuoli puristetulla istuimella ja selkänojalla" width="250" height="250" loading="lazy">
+    <img src="img/tuote-3.webp" alt="Neljä samanmallista tuolia eri väreissä" width="250" height="250" loading="lazy">
+    <img src="img/tuote-2.webp" alt="Tuoli, jonka istuin ja selkä ovat puristettua viilua" width="250" height="250" loading="lazy">
   </div>
 </section>
 
@@ -184,6 +174,14 @@
     <button class="btn" type="submit">Lähetä</button>
     <p class="form-note">Tiedot käsitellään <a href="tietosuoja.html">tietosuojaselosteen</a> mukaisesti.</p>
   </form>
+  <div class="location">
+    <img class="location-photo" src="img/tuotantolaitos.webp" alt="Päijät-Puu Oy:n tuotantorakennus" width="545" height="330" loading="lazy">
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?origin=mfe&amp;pb=!1m3!2m1!1sKaroselantie+2,+17130+Vesivehmaa!6i14"
+              title="Päijät-Puu Oy:n sijainti kartalla, Karoselantie 2, 17130 Vesivehmaa"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
 </section>
 
 <script>

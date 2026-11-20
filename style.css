@@ -64,22 +64,24 @@ nav .nav-cta { display: none; }
   .menu-open nav { animation: none; }
 }
 
-/* hero: black, left-aligned title, bent veneer layers echoing the logo */
+/* hero: full-screen lake photo with a dark overlay, text centred on top */
 .hero {
-  background: var(--black); color: var(--white);
-  display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+  position: relative; display: grid; place-items: center; text-align: center;
+  color: var(--white);
+  background: linear-gradient(rgba(10, 12, 18, .45), rgba(10, 12, 18, .45)),
+              url("img/etusivu.webp") center / cover no-repeat, #2b3440;
   /* header + first section fill exactly one screen */
   min-height: calc(100vh - var(--header-h));
   min-height: calc(100svh - var(--header-h));
 }
-.hero-text { padding: 80px 0 80px var(--pad); }
-.hero h1 { color: var(--veneer); }
-.hero p { color: #d8d2c9; font-size: 1.2rem; max-width: 26em; margin: 24px 0 36px; }
-.hero .btn { background: var(--veneer); color: var(--black); }
-.hero .btn:hover { background: var(--white); }
-/* layers fill the right half without stretching the section's height */
-.hero { position: relative; }
-.hero-art { position: absolute; top: 0; right: 0; width: 50%; height: 100%; }
+.hero-text { padding: 80px var(--pad); }
+.hero h1 { color: var(--white); text-shadow: 0 2px 16px rgba(0, 0, 0, .35); }
+.hero p {
+  color: var(--white); font-size: clamp(1.2rem, 2.4vw, 1.9rem); line-height: 1.3;
+  margin: 22px auto 44px; max-width: 26em; text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
+}
+.hero .btn { background: rgba(30, 30, 30, .9); color: var(--white); padding: 14px 32px; }
+.hero .btn:hover { background: var(--black); }
 
 /* photo + text */
 .intro {
@@ -101,32 +103,16 @@ nav .nav-cta { display: none; }
 .mat-cols h3 { font-size: 1.3rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.25; margin-top: 22px; }
 .mat-cols p { margin-top: 12px; font-size: 1rem; color: #3b352f; }
 
-/* product gallery: mosaic of different tile sizes, two rows tall so the
-   section still fits on one screen */
 .products { padding: 72px var(--pad); }
+/* product gallery: four square tiles per row, two rows, centred.
+   The client's photos are small (250 px), so tiles stay under ~270 px wide. */
+.products h2 { text-align: center; }
 .gallery {
-  display: grid; gap: 14px; margin-top: 36px;
-  grid-template-columns: 1.7fr 1fr 1fr 1.15fr;
-  /* height follows the width, so tile shapes stay the same on every screen:
-     small tiles are roughly square, the big chair and the ramp are portrait */
-  /* always full width; row height follows the width (≈ square small tiles),
-     capped on very wide screens so the section doesn't grow too tall */
-  grid-template-rows: repeat(2, min(20.4vw, 37vh));
-  grid-template-areas:
-    "a b c f"
-    "a d e f";
+  display: grid; gap: 30px; margin: 44px auto 0;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1170px;
 }
-.gallery img { min-height: 0; }
-.gallery .gf { object-position: center 80%; } /* keep the ramp itself in view */
-.gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
-.gallery .ga { grid-area: a; }
-.gallery .gb { grid-area: c; }
-.gallery .gc { grid-area: b; }
-.gallery .gd { grid-area: d; }
-.gallery .ge { grid-area: f; }
-.gallery .gf { grid-area: e; }
-/* white tile so the image's own white circle blends away */
-.gallery .contain { object-fit: contain; background: var(--white); padding: 6%; border: 1px solid #ece4d6; }
+.gallery img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
 
 /* pale veneer tone, same as the hero lines */
 .band { background: #ead8b8; color: var(--ink); padding: 90px var(--pad); }
@@ -243,27 +229,38 @@ footer a:focus-visible { outline-color: var(--veneer); }
   nav a { padding: 14px 0; font-size: 1.1rem; border-bottom: 1px solid #f0ebe2; }
   nav .nav-cta { display: block; margin-top: 18px; padding: 14px; text-align: center; border-bottom: 0; color: var(--white); }
   nav .nav-cta:hover { color: var(--white); }
-  /* phones: layers become a large toned-down backdrop behind the centred text */
-  .hero { grid-template-columns: 1fr; align-content: center; }
-  .hero-text { position: relative; z-index: 1; padding: 40px var(--pad); }
-  .hero-art { width: 100%; height: 100%; opacity: .28; }
+  .hero-text { padding: 40px var(--pad); }
   .intro, .contact { grid-template-columns: 1fr; gap: 36px; padding: 64px var(--pad); }
   .intro-img { height: 300px; }
   .materials, .products, .band { padding: 64px var(--pad); }
   .mat-cols { grid-template-columns: 1fr; gap: 48px; }
   .member { margin-left: 0; }
-  /* phones/tablets: wide tiles at top and bottom, squares between; sizes follow the width */
-  .gallery {
-    grid-template-columns: 1fr 1fr; gap: 10px;
-    aspect-ratio: auto; grid-template-rows: none;
-    grid-template-areas: "a a" "b c" "d e" "f f";
-  }
-  /* square tiles everywhere, so the big chair and the ramp aren't cut off */
-  .gallery img { aspect-ratio: 1; }
-  .gallery .gf { object-position: center 70%; }
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .contact { gap: 20px; }
   .contact-info { padding: 36px 26px 130px; }
   .contact-info::after { width: 170px; height: 170px; right: -50px; bottom: -50px; }
   .person a { font-size: 1.05rem; overflow-wrap: anywhere; }
   form { padding: 26px 20px; }
 }
+
+/* tablets: four per row so the small photos aren't stretched */
+@media (min-width: 560px) and (max-width: 860px) {
+  .gallery { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Google map under the contact card and form, full width of the section */
+/* map and building photo side by side under the contact card and form */
+/* photo on the left, map on the right, both in the photo's own shape (545:330)
+   so the photo is never cropped; together they span the full width */
+.location { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.map { border-radius: 4px; overflow: hidden; background: var(--birch); }
+.map iframe { display: block; width: 100%; height: auto; aspect-ratio: 545 / 330; border: 0; }
+.location-photo { width: 100%; height: auto; aspect-ratio: 545 / 330; object-fit: cover; border-radius: 4px; }
+@media (max-width: 860px) {
+  /* phones: photo goes under the map */
+  .location { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .location-photo { order: 2; } /* phones: photo under the map */
+}
+
+/* hero button text in capitals, as in the client's example */
+.hero-btn { text-transform: uppercase; letter-spacing: .04em; font-size: .95rem; }
